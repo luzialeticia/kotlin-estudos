@@ -9,5 +9,18 @@ fun main() {
     println("Bem vinde ao ByteBank, $titular!")
     println("Agência: $agencia")
     println("Conta: $conta")
-    println("Saldo $saldo")
+
+    /* if(saldo > 0.00) {
+        println("Saldo: $saldo")
+    } else if(saldo < 0.00) {
+        println("Conta negativada.")
+    } else {
+        println("Conta zerada.")
+    } */
+
+    when {
+        saldo > 0.00 -> println("Saldo: $saldo")
+        saldo < 0.00 -> println("Conta negativada.")
+        else -> println("Conta zerada.")
+    }
 }
