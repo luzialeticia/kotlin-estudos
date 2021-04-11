@@ -9,6 +9,8 @@ fun main() {
     println("Bem vinde ao ByteBank, $titular!")
     println("Agência: $agencia")
     println("Conta: $conta")
+
+    testaCondicoes(saldo)
 }
 
 fun testaCondicoes(saldo: Double) {
