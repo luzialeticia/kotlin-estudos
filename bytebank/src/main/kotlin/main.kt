@@ -9,7 +9,9 @@ fun main() {
     println("Bem vinde ao ByteBank, $titular!")
     println("Agência: $agencia")
     println("Conta: $conta")
+}
 
+fun testaCondicoes(saldo: Double) {
     /* if(saldo > 0.00) {
         println("Saldo: $saldo")
     } else if(saldo < 0.00) {
