@@ -11,6 +11,8 @@ fun main() {
     println("Conta: $conta")
 
     testaCondicoes(saldo)
+
+    testaLoops()
 }
 
 fun testaCondicoes(saldo: Double) {
@@ -26,5 +28,52 @@ fun testaCondicoes(saldo: Double) {
         saldo > 0.00 -> println("Saldo: $saldo")
         saldo < 0.00 -> println("Conta negativada.")
         else -> println("Conta zerada.")
+    }
+}
+
+fun testaLoops() {
+    for(i in 1..5) {
+        println(i)
+    }
+
+    println()
+
+    for(i in 5 downTo 1) {
+        println(i)
+    }
+
+    println()
+
+    for(i in 1..5 step 2) {
+        println(i)
+    }
+
+    println()
+
+    for(i in 1..5) {
+        if(i == 4) {
+            break
+        }
+
+        println(i)
+    }
+
+    println()
+
+    for(i in 5 downTo 1) {
+        if(i == 4) {
+            continue
+        }
+
+        println(i)
+    }
+
+    println()
+
+    var i = 6
+
+    while(i < 6) {
+        println(i)
+        i--
     }
 }
