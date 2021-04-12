@@ -2,16 +2,14 @@ fun main() {
 
     println("Bem vinde ao ByteBank!")
 
+    val contaLelus = Conta()
+    contaLelus.titular = "Lelus"
+    contaLelus.conta = 1001
+    contaLelus.saldo = 200.00
 
-
-    val titular = "Lelus"
-    val conta = 1001
-    val agencia = 1
-    var saldo = 0.00
-    saldo += 200
-
-    println("Agência: $agencia")
-    println("Conta: $conta")
+    println("Titular: ${contaLelus.titular}")
+    println("Conta: ${contaLelus.conta}")
+    println("Saldo: ${contaLelus.saldo}")
 
     /* testaCondicoes(saldo)
     testaLoops()
@@ -19,8 +17,8 @@ fun main() {
 }
 
 class Conta {
-    val titular = ""
-    val conta = 0
+    var titular = ""
+    var conta = 0
     var saldo = 0.00
 }
 
