@@ -11,7 +11,10 @@ fun main() {
     println("Conta: ${contaLelus.conta}")
     println("Saldo: ${contaLelus.saldo}")
 
-    /* testaCondicoes(saldo)
+
+    /*
+    testaCopiasEReferencias()
+    testaCondicoes(saldo)
     testaLoops()
      */
 }
@@ -20,6 +23,21 @@ class Conta {
     var titular = ""
     var conta = 0
     var saldo = 0.00
+}
+
+fun testaCopiasEReferencias() {
+    val numero = 10
+    var numero2 = numero
+    numero2++
+
+    println("$numero, $numero2")
+
+    val contaJoao = Conta()
+    contaJoao.titular = "João"
+    val contaMaria = Conta()
+    contaMaria.titular = "Maria"
+
+    println("${contaJoao.titular}, ${contaMaria.titular}")
 }
 
 fun testaCondicoes(saldo: Double) {
