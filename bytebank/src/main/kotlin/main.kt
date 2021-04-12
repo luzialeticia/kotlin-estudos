@@ -5,11 +5,17 @@ fun main() {
     val contaLelus = Conta()
     contaLelus.titular = "Lelus"
     contaLelus.conta = 1001
-    contaLelus.saldo = 200.00
+    contaLelus.saldo = 0.00
 
     println("Titular: ${contaLelus.titular}")
     println("Conta: ${contaLelus.conta}")
     println("Saldo: ${contaLelus.saldo}")
+
+    println()
+
+    println("Depositando")
+    deposita(contaLelus, 50.00)
+    println("Novo saldo: ${contaLelus.saldo}")
 
 
     /*
@@ -17,6 +23,10 @@ fun main() {
     testaCondicoes(saldo)
     testaLoops()
      */
+}
+
+fun deposita(conta: Conta, valor: Double) {
+    conta.saldo += valor
 }
 
 class Conta {
