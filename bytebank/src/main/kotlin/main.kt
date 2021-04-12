@@ -5,7 +5,12 @@ fun main() {
     val contaLelus = Conta()
     contaLelus.titular = "Lelus"
     contaLelus.conta = 1001
-    contaLelus.saldo = 0.00
+    contaLelus.saldo = 0.0
+
+    val contaJonas = Conta()
+    contaJonas.titular = "Jonas"
+    contaJonas.conta = 1002
+    contaJonas.saldo = 0.0
 
     println("Titular: ${contaLelus.titular}")
     println("Conta: ${contaLelus.conta}")
@@ -14,21 +19,33 @@ fun main() {
     println()
 
     println("Depositando")
-    contaLelus.deposita(250.00)
+    contaLelus.deposita(250.0)
     println("Novo saldo: ${contaLelus.saldo}")
 
     println()
 
     println("Sacando")
-    contaLelus.saque(50.00)
+    contaLelus.saque(50.0)
     println("Novo saldo: ${contaLelus.saldo}")
+
+    println()
+
+    println("Transferindo")
+    if(contaLelus.transfere(contaJonas, 300.0)) {
+        println("Sucesso!")
+    } else {
+        println("Falha na transferência.")
+    }
+
+    println("Saldo Lelus: ${contaLelus.saldo}")
+    println("Saldo Jonas: ${contaJonas.saldo}")
 
 }
 
 class Conta {
     var titular = ""
     var conta = 0
-    var saldo = 0.00
+    var saldo = 0.0
 
     fun deposita(valor: Double) {
         this.saldo += valor
@@ -38,6 +55,16 @@ class Conta {
         if(saldo >= valor) {
             saldo -= valor
         }
+    }
+
+    fun transfere(destino: Conta, valor: Double): Boolean {
+        if(saldo >= valor) {
+            saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+
+        return false
     }
 }
 
