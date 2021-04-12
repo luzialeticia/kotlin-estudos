@@ -14,25 +14,31 @@ fun main() {
     println()
 
     println("Depositando")
-    deposita(contaLelus, 50.00)
+    contaLelus.deposita(250.00)
     println("Novo saldo: ${contaLelus.saldo}")
 
+    println()
 
-    /*
-    testaCopiasEReferencias()
-    testaCondicoes(saldo)
-    testaLoops()
-     */
-}
+    println("Sacando")
+    contaLelus.saque(50.00)
+    println("Novo saldo: ${contaLelus.saldo}")
 
-fun deposita(conta: Conta, valor: Double) {
-    conta.saldo += valor
 }
 
 class Conta {
     var titular = ""
     var conta = 0
     var saldo = 0.00
+
+    fun deposita(valor: Double) {
+        this.saldo += valor
+    }
+
+    fun saque(valor: Double) {
+        if(saldo >= valor) {
+            saldo -= valor
+        }
+    }
 }
 
 fun testaCopiasEReferencias() {
